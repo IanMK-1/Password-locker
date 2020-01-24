@@ -1,6 +1,8 @@
 class Credentials:
     """Class that instantiates the credentials class"""
 
+    credentials_list = {"instagram": {}, "facebook": {}, "twitter": {}}
+
     def __init__(self, f_name, l_name, email, username, password):
         self.f_name = f_name
         self.l_name = l_name
@@ -8,4 +10,5 @@ class Credentials:
         self.username = username
         self.password = password
 
-
+    def save_instagram_credentials(self):
+        Credentials.credentials_list["instagram"].append(self)

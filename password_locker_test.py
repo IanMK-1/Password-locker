@@ -1,6 +1,5 @@
 import unittest
 from User import User
-from Credentials import Credentials
 
 
 class TestPasswordLocker(unittest.TestCase):
