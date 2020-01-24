@@ -37,6 +37,16 @@ class TestPasswordLocker(unittest.TestCase):
 
         self.assertEqual(len(User.user_list), 2)
 
+    def test_get_user_account_by_username_password(self):
+        """test_get_user_account_by_username is a test that obtains locker account based on username and password"""
+
+        self.new_locker_account.save_user_details()
+        user_test_details = User("joe", "mark", "joe123", "lockedaccount")
+        user_test_details.save_user_details()
+
+        got_user_account = User.get_user_account("joe123", "lockedaccount")
+        self.assertEqual(got_user_account.first_name, user_test_details.first_name)
+
 
 if __name__ == '__main__':
     unittest.main()
