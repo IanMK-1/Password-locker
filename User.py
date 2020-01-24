@@ -24,3 +24,6 @@ class User:
             if account.username == username:
                 if account.password == password:
                     return account
+
+    def del_user_account(self):
+        User.user_list.remove(self)
