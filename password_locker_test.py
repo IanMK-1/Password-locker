@@ -23,6 +23,20 @@ class TestPasswordLocker(unittest.TestCase):
         self.new_locker_account.save_user_details()
         self.assertEqual(len(User.user_list), 1)
 
+    def tearDown(self) -> None:
+        """tearDown method define instruction to be run before each test method"""
+
+        User.user_list = []
+
+    def test_save_multiple_user_details(self):
+        """Test_save_multiple_user_details saves details of multiple users"""
+
+        self.new_locker_account.save_user_details()
+        user_test_details = User("joe", "mark", "joe123", "lockedaccount")
+        user_test_details.save_user_details()
+
+        self.assertEqual(len(User.user_list), 2)
+
 
 if __name__ == '__main__':
     unittest.main()
