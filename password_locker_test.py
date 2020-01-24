@@ -17,6 +17,12 @@ class TestPasswordLocker(unittest.TestCase):
         self.assertEqual(self.new_locker_account.username, "ianmk")
         self.assertEqual(self.new_locker_account.password, "1234567")
 
+    def test_save_user_details(self):
+        """Test_save_user_details tests if details of a new user are being saved"""
+
+        self.new_locker_account.save_user_details()
+        self.assertEqual(len(User.user_list), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
