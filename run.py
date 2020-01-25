@@ -18,3 +18,8 @@ def check_existing_user(username, password):
 def display_user_details():
     return User.display_user_details()
 
+
+def create_new_credentials(account, f_name, l_name, email, username, password):
+    new_credentials = Credentials(account, f_name, l_name, email, username, password)
+    return new_credentials
+
