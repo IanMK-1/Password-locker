@@ -107,11 +107,66 @@ def main():
 
     if check_existing_user(su_username, su_password):
         print(f"Welcome {first_name}")
+        print("\n")
+        print("Create new credential account")
+
+        while True:
+            print(
+                "Use these commands: cc - create new credential account, "
+                "dc - display credential account, "
+                "fc - find credential account, "
+                "rc - remove credential account, "
+                "exc - exit"
+            )
+
+            cred_command = input()
+
+            if cred_command == "cc":
+                print("New Credentials Account")
+                print("-" * 15)
+
+                print("Account ..")
+                account = input()
+
+                print("First Name ..")
+                c_first_name = input()
+
+                print("Last Name ..")
+                c_last_name = input()
+
+                print("Email address ..")
+                email = input()
+
+                print("Username ..")
+                c_username = input()
+
+                print("Password")
+                print("-" * 15)
+                print(
+                    "Would you like to enter password or generate password? "
+                    "Use these commands: 1 - Enter own password, 2 - Generate password"
+                )
+                pwd_command = input()
+
+                if pwd_command == "1":
+                    c_password = input()
+
+                elif pwd_command == "2":
+                    c_password = randomString()
+
+                save_credentials(create_new_credentials(account, c_first_name, c_last_name, email, c_username,
+                                                        c_password))
+                print("\n")
+
+            elif cred_command == "exc":
+                print("Bye")
+                break
 
     else:
         print("\n")
         print("Wrong Username or password")
         print("Bye")
+        exit()
 
 
 if __name__ == '__main__':
