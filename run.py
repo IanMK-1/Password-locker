@@ -119,13 +119,13 @@ def main():
                 "exc - exit"
             )
 
-            cred_command = input()
+            cred_command = input().lower()
 
             if cred_command == "cc":
                 print("New Credentials Account")
                 print("-" * 15)
 
-                print("Account ..")
+                print("Account e.g. instagram/facebook/twitter")
                 account = input()
 
                 print("First Name ..")
@@ -149,6 +149,7 @@ def main():
                 pwd_command = input()
 
                 if pwd_command == "1":
+                    print("Please enter password")
                     c_password = input()
 
                 elif pwd_command == "2":
@@ -157,6 +158,24 @@ def main():
                 save_credentials(create_new_credentials(account, c_first_name, c_last_name, email, c_username,
                                                         c_password))
                 print("\n")
+
+            elif cred_command == "dc":
+
+                if display_credentials():
+                    print("List of your credential accounts")
+                    print("Account | First Name | Last Name | Email | Username | Password")
+                    print("-" * 70)
+                    for credentials in Credentials.credentials_list:
+                        print(f"{credentials.account} | {credentials.f_name} | {credentials.l_name} | "
+                              f"{credentials.email} | {credentials.username} | {credentials.password}")
+                        print("\n")
+
+                    print("-" * 70)
+
+                else:
+                    print('\n')
+                    print("You don't seem to have any accounts saved yet")
+                    print('\n')
 
             elif cred_command == "exc":
                 print("Bye")
