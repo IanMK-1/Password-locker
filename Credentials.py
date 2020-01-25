@@ -12,11 +12,19 @@ class Credentials:
         self.password = password
 
     def save_credentials(self):
+        """method to add a new user account details"""
+
         Credentials.credentials_list.append(self)
 
-    # @classmethod
-    # def get_account(cls, username):
-    #     for user_account in cls.credentials_list:
-    #         if user_account.username == username:
-    #             return user_account
+    @classmethod
+    def get_account(cls, username):
+        """method to get account depending on username"""
 
+        for user_account in cls.credentials_list:
+            if user_account.username == username:
+                return user_account
+
+    def del_account(self):
+        """method to delete user account depending on username"""
+
+        Credentials.credentials_list.remove(self)

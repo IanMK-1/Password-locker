@@ -37,13 +37,26 @@ class TestCredentials(unittest.TestCase):
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 2)
 
-    # def test_get_account_by_username(self):
-    #     self.new_credentials.save_credentials()
-    #     test_credentials = Credentials("twitter", "john", "hayes", "jh@ymail.com", "jhayes", "mountain")
-    #     test_credentials.save_credentials()
-    #
-    #     got_account = Credentials.get_account("jhayes")
-    #     self.assertEqual(got_account.f_name, test_credentials.f_name)
+    def test_get_account_by_username(self):
+        """test_get_account_by_username checks if user account gotten matches the username provided"""
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("twitter", "john", "hayes", "jh@ymail.com", "jhayes", "mountain")
+        test_credentials.save_credentials()
+
+        got_account = Credentials.get_account("jhayes")
+        self.assertEqual(got_account.f_name, test_credentials.f_name)
+
+    def test_del_account(self):
+        """test_del_account test checks if account using username is deleted"""
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("twitter", "john", "hayes", "jh@ymail.com", "jhayes", "mountain")
+        test_credentials.save_credentials()
+
+        got_account = Credentials.get_account("jhayes")
+        got_account.del_account()
+        self.assertEqual(len(Credentials.credentials_list), 1)
 
 
 if __name__ == '__main__':
