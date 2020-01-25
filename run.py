@@ -191,6 +191,20 @@ def main():
 
                     print("-" * 70)
 
+                else:
+                    print("The account does not exist")
+
+            elif cred_command == "rc":
+                print("Enter username of credential account you want to delete")
+
+                find_username = input()
+                if check_existing_account(find_username):
+                    found_account = find_credentials(find_username)
+                    delete_credentials(found_account)
+
+                else:
+                    print("The account does not exist")
+
             elif cred_command == "exc":
                 print("\n")
                 print("Bye..")
