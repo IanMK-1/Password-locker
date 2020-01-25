@@ -36,3 +36,7 @@ def find_credentials(user):
     return Credentials.get_account(user)
 
 
+def display_credentials():
+    return Credentials.display_accounts()
+
+
