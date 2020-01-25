@@ -177,8 +177,23 @@ def main():
                     print("You don't seem to have any accounts saved yet")
                     print('\n')
 
+            elif cred_command == "fc":
+                print("Enter username of credential account you want to search for")
+
+                search_username = input()
+                if check_existing_account(search_username):
+                    search_account = find_credentials(search_username)
+                    print(f"Your {search_account.username} credential account")
+                    print("Account | First Name | Last Name | Email | Username | Password")
+                    print("-" * 70)
+                    print(f"{search_account.account} | {search_account.f_name} | {search_account.l_name} "
+                          f"{search_account.email} | {search_account.username} | {search_account.password}")
+
+                    print("-" * 70)
+
             elif cred_command == "exc":
-                print("Bye")
+                print("\n")
+                print("Bye..")
                 break
 
     else:
