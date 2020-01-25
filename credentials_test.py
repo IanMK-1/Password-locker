@@ -58,6 +58,11 @@ class TestCredentials(unittest.TestCase):
         got_account.del_account()
         self.assertEqual(len(Credentials.credentials_list), 1)
 
+    def test_display_accounts(self):
+        """test_display_accounts tests if the available accounts are being displayed"""
+
+        self.assertEqual(Credentials.display_accounts(), Credentials.credentials_list)
+
 
 if __name__ == '__main__':
     unittest.main()

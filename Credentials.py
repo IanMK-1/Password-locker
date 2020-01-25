@@ -28,3 +28,9 @@ class Credentials:
         """method to delete user account depending on username"""
 
         Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def display_accounts(cls):
+        """method to display all the accounts"""
+
+        return cls.credentials_list
