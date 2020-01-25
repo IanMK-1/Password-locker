@@ -15,3 +15,6 @@ def check_existing_user(username, password):
     return User.user_exist(username, password)
 
 
+def display_user_details():
+    return User.display_user_details()
+
