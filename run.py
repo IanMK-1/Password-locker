@@ -28,3 +28,11 @@ def save_credentials(credentials):
     credentials.save_credentials()
 
 
+def delete_credentials(credentials):
+    credentials.del_account()
+
+
+def find_credentials(user):
+    return Credentials.get_account(user)
+
+
