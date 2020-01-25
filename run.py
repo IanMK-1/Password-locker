@@ -1,6 +1,7 @@
 from Credentials import Credentials
 from User import User
-
+import random
+import string
 
 def create_user_account(first_name, last_name, username, password):
     new_user = User(first_name, last_name, username, password)
@@ -44,3 +45,10 @@ def check_existing_account(username):
     return Credentials.account_exist(username)
 
 
+def randomString(stringLength=10):
+    """Generate a random string of fixed length """
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))
+
+
+def main():
