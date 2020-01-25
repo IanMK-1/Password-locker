@@ -26,4 +26,19 @@ class User:
                     return account
 
     def del_user_account(self):
+        """method to delete user"""
+
         User.user_list.remove(self)
+
+    @classmethod
+    def display_user_details(cls):
+        """method to display user list"""
+
+        return cls.user_list
+
+    @classmethod
+    def user_exist(cls, username, password):
+        for account in cls.user_list:
+            if account.username == username:
+                if account.password == password:
+                    return account

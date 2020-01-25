@@ -57,6 +57,19 @@ class TestPasswordLocker(unittest.TestCase):
         got_account.del_user_account()
         self.assertEqual(len(User.user_list), 1)
 
+    def test_check_if_user_exists(self):
+        self.new_locker_account.save_user_details()
+        user_test_details = User("joe", "mark", "joe123", "lockedaccount")
+        user_test_details.save_user_details()
+
+        user_exists = User.user_exist("joe123", "lockedaccount")
+        self.assertTrue(user_exists)
+
+    def test_display_user_details(self):
+        """test_display_user_details tests if the available user account is being displayed"""
+
+        self.assertEqual(User.display_user_details(), User.user_list)
+
 
 if __name__ == '__main__':
     unittest.main()
