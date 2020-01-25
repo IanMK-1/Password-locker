@@ -5,44 +5,54 @@ import string
 
 
 def create_user_account(first_name, last_name, username, password):
+    """Create a new password locker account"""
     new_user = User(first_name, last_name, username, password)
     return new_user
 
 
 def save_user_details(user):
+    """Save user details"""
     user.save_user_details()
 
 
 def check_existing_user(username, password):
+    """Check if user exist using their username and password"""
     return User.user_exist(username, password)
 
 
 def display_user_details():
+    """display all user details"""
     return User.display_user_details()
 
 
 def create_new_credentials(account, f_name, l_name, email, username, password):
+    """create a new credential account"""
     new_credentials = Credentials(account, f_name, l_name, email, username, password)
     return new_credentials
 
 
 def save_credentials(credentials):
+    """save new credentials"""
     credentials.save_credentials()
 
 
 def delete_credentials(credentials):
+    """delete credential account"""
     credentials.del_account()
 
 
 def find_credentials(username):
+    """Find credential account using username"""
     return Credentials.get_account(username)
 
 
 def display_credentials():
+    """Display all credential accounts"""
     return Credentials.display_accounts()
 
 
 def check_existing_account(username):
+    """Check if account exists using username"""
     return Credentials.account_exist(username)
 
 
