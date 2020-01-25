@@ -3,6 +3,7 @@ from User import User
 import random
 import string
 
+
 def create_user_account(first_name, last_name, username, password):
     new_user = User(first_name, last_name, username, password)
     return new_user
@@ -52,3 +53,47 @@ def randomString(stringLength=10):
 
 
 def main():
+    print("Hello, welcome to Password Locker Application. What is your name?")
+    print('\t')
+    user_name = input()
+
+    print(f"Hello {user_name}. what would you like to do?")
+    print('\n')
+
+    while True:
+        print(
+            "USE THE FOLLOWING COMMAND TO CREATE ACCOUNT: "
+            "ca - create new password locker account, "
+            "ex - exit"
+        )
+        print('\t')
+        command = input().lower()
+
+        if command == "ca":
+            print("New Account")
+            print("-" * 15)
+
+            print("First Name ...")
+            first_name = input()
+
+            print("Last Name ...")
+            last_name = input()
+
+            print("Username ...")
+            username = input()
+
+            print("Password ...")
+            password = input()
+
+            save_user_details(create_user_account(first_name, last_name, username, password))
+            print('\n')
+            print(f"{first_name} {last_name}, New Account Created")
+            print('\n')
+
+        elif command == "ex":
+            print("Goodbye..")
+            break
+
+
+if __name__ == '__main__':
+    main()
