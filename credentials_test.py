@@ -58,6 +58,14 @@ class TestCredentials(unittest.TestCase):
         got_account.del_account()
         self.assertEqual(len(Credentials.credentials_list), 1)
 
+    def test_credentials_exists(self):
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("twitter", "john", "hayes", "jh@ymail.com", "jhayes", "mountain")
+        test_credentials.save_credentials()
+
+        account_exists = Credentials.account_exist("jhayes")
+        self.assertTrue(account_exists)
+
     def test_display_accounts(self):
         """test_display_accounts tests if the available accounts are being displayed"""
 

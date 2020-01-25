@@ -34,3 +34,9 @@ class Credentials:
         """method to display all the accounts"""
 
         return cls.credentials_list
+
+    @classmethod
+    def account_exist(cls, username):
+        for user_account in cls.credentials_list:
+            if user_account.username == username:
+                return user_account

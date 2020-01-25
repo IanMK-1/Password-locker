@@ -32,11 +32,15 @@ def delete_credentials(credentials):
     credentials.del_account()
 
 
-def find_credentials(user):
-    return Credentials.get_account(user)
+def find_credentials(username):
+    return Credentials.get_account(username)
 
 
 def display_credentials():
     return Credentials.display_accounts()
+
+
+def check_existing_account(username):
+    return Credentials.account_exist(username)
 
 
