@@ -21,8 +21,8 @@ class TestCredentials(unittest.TestCase):
         """Test_save_credentials is a test to show if user credentials are being saved"""
 
         self.new_credentials.save_instagram_credentials()
-        self.assertEqual(len(Credentials.credentials_list["instagram"], 1))
+        self.assertEqual(len(Credentials.credentials_list), 1)
 
-
+    
 if __name__ == '__main__':
     unittest.main()
