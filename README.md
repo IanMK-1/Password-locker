@@ -28,6 +28,9 @@
 ### Link
 [Github](https://github.com/IanMK-1/Password-locker)
 
+### Codebeat
+[![codebeat badge](https://codebeat.co/badges/b8b3f6c1-2dee-4c9e-8c97-7faf47df5d81)](https://codebeat.co/projects/github-com-ianmk-1-password-locker-master)
+
 ### Contacts
 Email: iankimotho233@gmail.com
 
