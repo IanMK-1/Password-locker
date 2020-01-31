@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.6
 from Credentials import Credentials
 from User import User
 import random
